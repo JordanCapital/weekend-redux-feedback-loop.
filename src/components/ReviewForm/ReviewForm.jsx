@@ -22,14 +22,19 @@ function ReviewForm () {
         event.preventDefault();
         console.log('Feedback', feedback);
     // 'POST' data to the database
-    axios
-
-        dispatch({
+    axios.post('/api/feedback', feedback)
+        .then((response) => {
+            console.log('Feedback saved successfully', response);
+            dispatch({
             type: 'ADD_FEEDBACK',
             payload: feedback,
+         });
+         history.push('/thankyou')
+        })
+        .catch((error) => {
+            console.log('Error saving feedback', error);
         });
-        history.push('/thankyou')
-
+       
     };
     return (
         <div>
