@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-function Feeling () {
+function FeelingForm () {
     const dispatch = useDispatch();
     const history = useHistory();
     const [feeling, setFeeling] = useState("");
@@ -42,4 +42,4 @@ return (
 );
 
 }
-export default Feeling;
+export default FeelingForm;
