@@ -11,10 +11,12 @@ function ReviewForm () {
         feelingInfo: store.feelingInfo,
         understandingInfo: store.understandingInfo,
         supportInfo: store.supportInfo,
+        commentsInfo: store.commentsInfo,
     }));
     console.log('This is the review form', ReviewForm);
+
     // check if all feedback have been completed
-    const isComplete = feedback.feelings !== '' && feedback.understanding !== '' && feedback.support !== '';
+    const isComplete = feedback.feelingInfo !== '' && feedback.understandingInfo !== '' && feedback.supportInfo !== '' && feedback.commentsInfo;
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -24,7 +26,7 @@ function ReviewForm () {
             type: 'ADD_FEEDBACK',
             payload: feedback,
         });
-        history.push('/')
+        history.push('/thankyou')
 
     };
     return (
@@ -35,8 +37,11 @@ function ReviewForm () {
                 <p>Understanding: {feedback.understandingInfo}</p>
                 <p>Support: {feedback.supportInfo}</p>
                 <p>Comments:{feedback.commentsInfo}</p>
-
-                <button disabled={!isComplete}>Submit</button>
+                {isComplete ? (
+                    <button type="submit">Submit</button>
+                ) :  (
+                    <button type="submit" disabled>Incomplete</button>
+                )}
             </form>
         </div>
     );

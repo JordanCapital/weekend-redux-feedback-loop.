@@ -36,6 +36,12 @@ const reviewInfo = (state = [], action ) => {
   }
   return state;
 }
+const ClearInfo = (state = null, action ) => {
+  if(action.type === 'CLEAR_FEEDBACK') {
+    return null;
+  }
+  return state;
+}
 
 const storeInstance = createStore(
     combineReducers({
@@ -45,6 +51,7 @@ const storeInstance = createStore(
       supportInfo,
       commentsInfo,
       reviewInfo,
+      ClearInfo,
       
     }),
     applyMiddleware(logger)

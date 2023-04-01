@@ -7,6 +7,7 @@ import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
 import SupportForm from '../SupportForm/SupportForm';
 import CommentsForm from '../CommentsForm/CommentsForm';
 import ReviewForm from '../ReviewForm/ReviewForm';
+import ThanksForm from '../ThanksForm/ThanksForm';
 
 function App() {
 
@@ -30,8 +31,11 @@ function App() {
           <Route exact path="/comments">
             <CommentsForm/>
           </Route>
-          <Route exact path="/Review">
+          <Route exact path="/review">
             <ReviewForm/>
+          </Route>
+          <Route exact path="/thankyou">
+            <ThanksForm/>
           </Route>
         </Switch>
       </Router>
