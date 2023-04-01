@@ -30,6 +30,12 @@ const commentsInfo = (state = [], action) => {
   }
   return state;
 };
+const reviewInfo = (state = [], action ) => {
+  if(action.type === 'ADD_FEEDBACK'){
+    return action.payload;
+  }
+  return state;
+}
 
 const storeInstance = createStore(
     combineReducers({
@@ -38,6 +44,7 @@ const storeInstance = createStore(
       understandingInfo,
       supportInfo,
       commentsInfo,
+      reviewInfo,
       
     }),
     applyMiddleware(logger)

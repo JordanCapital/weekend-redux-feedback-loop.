@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 
@@ -14,28 +13,30 @@ function ReviewForm () {
         supportInfo: store.supportInfo,
     }));
     console.log('This is the review form', ReviewForm);
-
+    // check if all feedback have been completed
+    const isComplete = feedback.feelings !== '' && feedback.understanding !== '' && feedback.support !== '';
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Review', review);
+        console.log('Feedback', feedback);
+
+        dispatch({
+            type: 'ADD_FEEDBACK',
+            payload: feedback,
+        });
+        history.push('/')
 
     };
     return (
         <div>
             <h2>Review Your Feedback</h2>
             <form onSubmit = {handleSubmit}>
-                <p>Feeling: {ReviewForm.feelings}</p>
-                <p>Understanding: {ReviewForm.understanding}</p>
-                <p>Support: {ReviewForm.support}</p>
-                <p>Comments:{ReviewForm.comments}</p>
-                {formComplete ? (
-                    <button type="submit">Submit Feedback</button>
-                ) : (
-                    <button type="submit" disabled>
-                    Submit Feedback
-                    </button>
-                )}
+                <p>Feeling: {feedback.feelingInfo}</p>
+                <p>Understanding: {feedback.understandingInfo}</p>
+                <p>Support: {feedback.supportInfo}</p>
+                <p>Comments:{feedback.commentsInfo}</p>
+
+                <button disabled={!isComplete}>Submit</button>
             </form>
         </div>
     );
