@@ -15,7 +15,7 @@ const handleSubmit = (event) => {
         type: 'ADD_FEELING',
         payload: feeling,
     });
-
+    
     setFeeling('');
     history.push('/understanding');
 };

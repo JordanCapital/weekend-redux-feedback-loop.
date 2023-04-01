@@ -10,7 +10,38 @@ function SupportForm (){
 const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Support', support);
-}
+
+    dispatch({
+        type:ADD_SUPPORT,
+        payload: support,
+
+    });
+    setSupport('');
+    history.push('/comments');
+};
+
+return (
+    <div>
+        <h2>How well are you being supported?</h2>
+        <form onSubmit={handleSubmit}>
+        <lable>
+            Supported?
+            <input
+            type="number"
+            min="4"
+            max="5"
+            value={support}
+            onChange={(event) => setSupport(event.target.value)}
+            required 
+            />
+        </lable>
+        <br/>
+        <button type="submit">NEXT</button>
+        </form>
+    </div>
+);
 
 
-}
+};
+
+export default SupportForm;

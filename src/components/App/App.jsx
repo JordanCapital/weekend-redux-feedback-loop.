@@ -4,6 +4,7 @@ import axios from 'axios';
 import './App.css';
 import FeelingForm from "../FeelingForm/FeelingForm";
 import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
+import SupportForm from '../SupportForm/SupportForm';
 
 function App() {
 
@@ -20,6 +21,9 @@ function App() {
                 </Route>
           <Route exact path="/understanding">
             <UnderstandingForm/>
+          </Route>
+          <Route exact path="/support">
+            <SupportForm/>
           </Route>
         </Switch>
       </Router>
