@@ -36,7 +36,7 @@ const reviewInfo = (state = [], action ) => {
   }
   return state;
 }
-const ClearInfo = (state = null, action ) => {
+const ClearInfo = (state = {}, action ) => {
   if(action.type === 'CLEAR_FEEDBACK') {
     return null;
   }

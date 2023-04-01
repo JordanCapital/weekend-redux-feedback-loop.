@@ -13,7 +13,7 @@ function ReviewForm () {
         supportInfo: store.supportInfo,
         commentsInfo: store.commentsInfo,
     }));
-    console.log('This is the review form', ReviewForm);
+    console.log('Feedback', feedback);
 
     // check if all feedback have been completed
     const isComplete = feedback.feelingInfo !== '' && feedback.understandingInfo !== '' && feedback.supportInfo !== '' && feedback.commentsInfo;
@@ -21,6 +21,8 @@ function ReviewForm () {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Feedback', feedback);
+    // 'POST' data to the database
+    axios
 
         dispatch({
             type: 'ADD_FEEDBACK',
