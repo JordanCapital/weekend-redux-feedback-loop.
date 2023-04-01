@@ -6,6 +6,7 @@ import FeelingForm from "../FeelingForm/FeelingForm";
 import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
 import SupportForm from '../SupportForm/SupportForm';
 import CommentsForm from '../CommentsForm/CommentsForm';
+import ReviewForm from '../ReviewForm/ReviewForm';
 
 function App() {
 
@@ -18,8 +19,8 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-                  <FeelingForm/>
-                </Route>
+            <FeelingForm/>
+          </Route>
           <Route exact path="/understanding">
             <UnderstandingForm/>
           </Route>
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route exact path="/comments">
             <CommentsForm/>
+          </Route>
+          <Route exact path="/Review">
+            <ReviewForm/>
           </Route>
         </Switch>
       </Router>
