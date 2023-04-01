@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import FeelingForm from "../FeelingForm/FeelingForm";
+import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
 
 function App() {
 
@@ -17,6 +18,9 @@ function App() {
           <Route exact path="/">
                   <FeelingForm/>
                 </Route>
+          <Route exact path="/understanding">
+            <UnderstandingForm/>
+          </Route>
         </Switch>
       </Router>
     
