@@ -17,7 +17,7 @@ function CommentsForm () {
     });
 
     setComments('');
-    history.push('/comments');
+    history.push('/review');
     };
 
     return (
@@ -36,8 +36,7 @@ function CommentsForm () {
             <button type="submit">NEXT</button>
             </form>
         </div>
-    );
-    
+    );  
 };
 
 export default CommentsForm;

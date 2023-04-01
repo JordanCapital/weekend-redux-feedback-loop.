@@ -12,7 +12,7 @@ const handleSubmit = (event) => {
     console.log('Support', support);
 
     dispatch({
-        type:ADD_SUPPORT,
+        type:'ADD_SUPPORT',
         payload: support,
 
     });
@@ -28,7 +28,7 @@ return (
             Supported?
             <input
             type="number"
-            min="4"
+            min="1"
             max="5"
             value={support}
             onChange={(event) => setSupport(event.target.value)}

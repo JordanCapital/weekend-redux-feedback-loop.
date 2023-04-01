@@ -5,6 +5,7 @@ import './App.css';
 import FeelingForm from "../FeelingForm/FeelingForm";
 import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
 import SupportForm from '../SupportForm/SupportForm';
+import CommentsForm from '../CommentsForm/CommentsForm';
 
 function App() {
 
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route exact path="/support">
             <SupportForm/>
+          </Route>
+          <Route exact path="/comments">
+            <CommentsForm/>
           </Route>
         </Switch>
       </Router>
