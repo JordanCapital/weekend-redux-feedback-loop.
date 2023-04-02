@@ -6,25 +6,25 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
 
-const feelingInfo = (state=0, action) => {
+const feeling = (state=0, action) => {
   if (action.type === 'ADD_FEELING') {
     return action.payload;
   }
   return state;
 };
-const understandingInfo = (state=0, action) => {
+const understanding = (state=0, action) => {
   if (action.type === 'ADD_UNDERSTANDING') {
     return action.payload;
   }
   return state;
 };
-const supportInfo = (state=0, action) => {
+const support = (state=0, action) => {
   if (action.type === 'ADD_SUPPORT') {
     return action.payload;
   }
   return state;
 };
-const commentsInfo = (state = [], action) => {
+const comments = (state = [], action) => {
   if(action.type === 'ADD_COMMENTS') {
     return action.payload;
   }
@@ -38,7 +38,7 @@ const reviewInfo = (state = [], action ) => {
 }
 const ClearInfo = (state = {}, action ) => {
   if(action.type === 'CLEAR_FEEDBACK') {
-    return null;
+    return {};
   }
   return state;
 }
@@ -46,10 +46,10 @@ const ClearInfo = (state = {}, action ) => {
 const storeInstance = createStore(
     combineReducers({
       //list of reducers here
-      feelingInfo,
-      understandingInfo,
-      supportInfo,
-      commentsInfo,
+      feeling,
+      understanding,
+      support,
+      comments,
       reviewInfo,
       ClearInfo,
       
